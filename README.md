@@ -1,4 +1,4 @@
-# PowerSysPro-Analysis-Suite
+# PwrSysPro-Analysis-Suite
 A power system analysis software
 
 This is the master blueprint for PwrsysPro Analysis Suite. This document is designed to guide the development team, architecture review, and project management from Day 1 through to the final release.
