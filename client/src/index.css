@@ -1,0 +1,221 @@
+/* PwrSysPro Analysis Suite - Main Stylesheet */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-cad-dark text-cad-text-primary font-sans;
+  overflow: hidden;
+}
+
+/* ReactFlow Canvas Customization - CAD-like Dark Theme */
+.react-flow {
+  @apply bg-cad-darker;
+}
+
+.react-flow__background {
+  @apply bg-cad-darker;
+}
+
+.react-flow__background-pattern {
+  /* Grid pattern for CAD feel */
+  stroke: #1e2942;
+  stroke-width: 0.5px;
+}
+
+.react-flow__edge-path {
+  stroke: #3b82f6;
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #60a5fa;
+  stroke-width: 3;
+}
+
+.react-flow__handle {
+  @apply bg-cad-accent border-2 border-cad-border;
+  width: 10px;
+  height: 10px;
+}
+
+.react-flow__handle-connecting {
+  @apply bg-cad-success;
+}
+
+.react-flow__handle-valid {
+  @apply bg-cad-success;
+}
+
+/* Custom Node Styles */
+.custom-node {
+  @apply bg-cad-panel border-2 border-cad-border rounded-lg p-4 shadow-lg;
+  min-width: 180px;
+  transition: all 0.2s;
+}
+
+.custom-node:hover {
+  @apply border-cad-accent shadow-xl;
+  transform: translateY(-2px);
+}
+
+.custom-node.selected {
+  @apply border-cad-accent ring-2 ring-cad-accent ring-opacity-50;
+}
+
+/* Node Status Indicators */
+.node-status-pass {
+  @apply border-cad-success;
+}
+
+.node-status-warning {
+  @apply border-cad-warning;
+}
+
+.node-status-fail {
+  @apply border-cad-danger;
+}
+
+/* Component Library Sidebar */
+.component-library {
+  @apply bg-cad-panel border-r border-cad-border;
+}
+
+.component-item {
+  @apply bg-cad-dark border border-cad-border rounded-lg p-3 mb-2 cursor-move;
+  transition: all 0.2s;
+}
+
+.component-item:hover {
+  @apply border-cad-accent bg-cad-panel;
+  transform: translateX(4px);
+}
+
+/* Property Inspector */
+.property-inspector {
+  @apply bg-cad-panel border-l border-cad-border;
+}
+
+.property-group {
+  @apply mb-4;
+}
+
+.property-label {
+  @apply text-cad-text-secondary text-sm font-medium mb-1 block;
+}
+
+.property-value {
+  @apply bg-cad-dark border border-cad-border rounded px-3 py-2 text-cad-text-primary;
+  @apply focus:outline-none focus:border-cad-accent transition-colors;
+}
+
+/* Buttons */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all;
+}
+
+.btn-primary {
+  @apply bg-cad-accent text-white hover:bg-blue-600;
+}
+
+.btn-success {
+  @apply bg-cad-success text-white hover:bg-green-600;
+}
+
+.btn-danger {
+  @apply bg-cad-danger text-white hover:bg-red-600;
+}
+
+.btn-secondary {
+  @apply bg-cad-panel border border-cad-border text-cad-text-primary hover:border-cad-accent;
+}
+
+/* Toolbar */
+.toolbar {
+  @apply bg-cad-panel border-b border-cad-border px-4 py-2;
+  @apply flex items-center space-x-4;
+}
+
+.toolbar-group {
+  @apply flex items-center space-x-2;
+}
+
+/* Status Bar */
+.status-bar {
+  @apply bg-cad-panel border-t border-cad-border px-4 py-2;
+  @apply flex items-center justify-between text-sm text-cad-text-secondary;
+}
+
+/* Tag Display */
+.component-tag {
+  @apply font-mono text-xs bg-cad-dark px-2 py-1 rounded border border-cad-border;
+}
+
+/* Calculation Results Badge */
+.result-badge {
+  @apply inline-flex items-center px-2 py-1 rounded text-xs font-medium;
+}
+
+.result-badge-pass {
+  @apply bg-cad-success bg-opacity-20 text-cad-success border border-cad-success;
+}
+
+.result-badge-warning {
+  @apply bg-cad-warning bg-opacity-20 text-cad-warning border border-cad-warning;
+}
+
+.result-badge-fail {
+  @apply bg-cad-danger bg-opacity-20 text-cad-danger border border-cad-danger;
+}
+
+/* Loading Spinner */
+.spinner {
+  @apply border-4 border-cad-border border-t-cad-accent rounded-full;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cad-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cad-border rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cad-accent;
+}
+
+/* Context Menu */
+.context-menu {
+  @apply bg-cad-panel border border-cad-border rounded-lg shadow-2xl;
+  @apply py-1 min-w-[160px];
+}
+
+.context-menu-item {
+  @apply px-4 py-2 hover:bg-cad-dark cursor-pointer text-sm;
+  @apply flex items-center space-x-2;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply bg-cad-dark border border-cad-border rounded px-2 py-1 text-xs;
+  @apply shadow-lg z-50;
+}
